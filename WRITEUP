@@ -1,0 +1,10 @@
+1. labelled imagees using Fiji
+2. created masks using Fiji
+3. performed:
+	3.a computed for the pixel hue mode of the roi
+	3.b computed for the second moment to get the angle of orientation
+		3.b.1 cv2.moment computed until 3rd moment
+		3.b.2 computed for angle of orientation using (0.5*(np.arctan((2*M["m11"])/(M["m20"]-M["m02"]))))*(180./np.pi)
+		3.b.3 computed for the 2d rotation matrix 
+		3.b.4 performed affine warp on the roi using the rotation matrix
+		3.b.5 output is a new roi na aligned along the major orientation
